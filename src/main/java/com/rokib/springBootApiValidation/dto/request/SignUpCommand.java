@@ -2,6 +2,7 @@ package com.rokib.springBootApiValidation.dto.request;
 
 import com.rokib.springBootApiValidation.constants.FieldConstraints;
 import com.rokib.springBootApiValidation.validation.rule.NotExistingEmail;
+import com.rokib.springBootApiValidation.validation.rule.ValidPassword;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,6 +36,28 @@ public class SignUpCommand {
                             + "]",
             required = true)
     private String email;
+
+
+    @NotEmpty(message = "Password must not be null or empty")
+    @Size.List({
+            @Size(
+                    min = FieldConstraints.ForUser.MIN_PASSWORD_LENGTH,
+                    message = "Password must have at least {min} characters"),
+            @Size(
+                    max = FieldConstraints.ForUser.MAX_PASSWORD_LENGTH,
+                    message = "Password can have at most {max} characters")
+    })
+    @ValidPassword
+    @ApiModelProperty(
+            notes =
+                    "Password,length should be between ["
+                            + FieldConstraints.ForUser.MIN_PASSWORD_LENGTH
+                            + ","
+                            + FieldConstraints.ForUser.MAX_PASSWORD_LENGTH
+                            + "], password should contain at least one lowercase, one uppercase, one digit, one special character and no whitespace",
+            required = true)
+    private String password;
+
     @NotEmpty(message = "User's First name must not be null or empty")
     @Size.List({
             @Size(
