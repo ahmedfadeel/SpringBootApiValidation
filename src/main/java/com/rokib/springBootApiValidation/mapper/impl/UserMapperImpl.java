@@ -1,7 +1,7 @@
 package com.rokib.springBootApiValidation.mapper.impl;
 
 
-import com.rokib.springBootApiValidation.dto.request.SignUpCommand;
+import com.rokib.springBootApiValidation.dto.account.request.SignUpCommand;
 import com.rokib.springBootApiValidation.mapper.contract.UserMapper;
 import com.rokib.springBootApiValidation.persistence.entity.User;
 import org.springframework.stereotype.Service;

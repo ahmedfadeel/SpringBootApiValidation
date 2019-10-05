@@ -1,4 +1,4 @@
-package com.rokib.springBootApiValidation.dto.request;
+package com.rokib.springBootApiValidation.dto.account.request;
 
 import com.rokib.springBootApiValidation.constants.FieldConstraints;
 import com.rokib.springBootApiValidation.validation.rule.NotExistingEmail;

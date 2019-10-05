@@ -14,5 +14,9 @@ public class FieldConstraints {
         public static final int MAX_ENCRYPTED_PASSWORD_LENGTH = 512;
     }
 
+    public class ForWeekDay {
+        public static final int MAX_WEEKDAY_NAME_LENGTH = 4;
+        public static final int MIN_WEEKDAY_NAME_LENGTH = 3;
+    }
 
 }
